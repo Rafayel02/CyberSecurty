@@ -1,7 +1,5 @@
 package org.example.parz_poxarinum;
 
-import org.example.caesar.CaesarAlgorithm;
-
 import java.util.Scanner;
 
 public class ParzPoxarinumMain {
@@ -17,7 +15,7 @@ public class ParzPoxarinumMain {
 
         System.out.println("The key is: " + parzPoxarinumAlgorithm.getKey());
 
-        System.out.print("Input text: ");
+        System.out.print("Input text.txt: ");
         final String text = scanner.nextLine();
 
         final String encodedText = parzPoxarinumAlgorithm.encode(text);

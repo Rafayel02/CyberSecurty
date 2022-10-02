@@ -1,9 +1,9 @@
 package org.example.parz_poxarinum;
 
+import org.example.util.StringUtil;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ParzPoxarinumAlgorithm {
 
@@ -21,7 +21,7 @@ public class ParzPoxarinumAlgorithm {
 
         for (char c : text.toLowerCase().toCharArray()) {
             if (!charList.contains(c)) {
-                if (isLetter(c)) charList.add(c);
+                if (StringUtil.isLetter(c)) charList.add(c);
             }
         }
 
@@ -59,7 +59,7 @@ public class ParzPoxarinumAlgorithm {
         final char[] keyList = key.toCharArray();
 
         for (char c : text.toCharArray()) {
-            if (isLetter(c)) {
+            if (StringUtil.isLetter(c)) {
                 result.append(keyList[c - 97]);
             } else {
                 result.append(c);
@@ -89,10 +89,6 @@ public class ParzPoxarinumAlgorithm {
         }
 
         return result.toString();
-    }
-
-    private boolean isLetter(char c) {
-        return c >= 97 && c <= 122;
     }
 
 }
