@@ -1,6 +1,6 @@
 package org.example.lezvi_vichakagrutyun;
 
-import org.example.util.StringUtil;
+import org.example.util.EnglishAlphabetUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class LezviVichakagrutyunCalculator {
         int allCount = 0;
         while (line != null) {
             for (char c : line.toCharArray()) {
-                if (StringUtil.isLetter(c)) {
+                if (EnglishAlphabetUtil.isLetter(c)) {
                     result.put(c, result.get(c) + 1);
                     allCount++;
                 }
@@ -53,7 +53,7 @@ public class LezviVichakagrutyunCalculator {
 
         int allCount = 0;
         for (char c : text.toCharArray()) {
-            if (StringUtil.isLetter(c)) {
+            if (EnglishAlphabetUtil.isLetter(c)) {
                 result.put(c, result.get(c) + 1);
                 allCount++;
             }

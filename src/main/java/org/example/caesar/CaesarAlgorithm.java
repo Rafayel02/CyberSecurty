@@ -1,5 +1,9 @@
 package org.example.caesar;
 
+import org.example.util.EnglishAlphabetUtil;
+
+import static org.example.util.EnglishAlphabetUtil.*;
+
 public class CaesarAlgorithm {
 
     private CaesarAlgorithm() {
@@ -9,22 +13,10 @@ public class CaesarAlgorithm {
         final StringBuilder result = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            if (c >= 65 && c <= 90) {
-                int nextValue = c + count;
-                if (nextValue > 90) {
-                    nextValue = 65 + (nextValue - 90) - 1;
-                } else if (nextValue < 65) {
-                    nextValue = 90 - (65 - nextValue) + 1;
-                }
-                result.append((char) nextValue);
-            } else if (c >= 97 && c <= 122) {
-                int nextValue = c + count;
-                if (nextValue > 122) {
-                    nextValue = 97 + (nextValue - 122) - 1;
-                } else if (nextValue < 97) {
-                    nextValue = 122 - (97 - nextValue) + 1;
-                }
-                result.append((char) nextValue);
+            if (EnglishAlphabetUtil.isUpper(c)) {
+                result.append((char) (((c + count - UPPER_CASE_MIN) % SIZE) + UPPER_CASE_MIN));
+            } else if (EnglishAlphabetUtil.isLower(c)) {
+                result.append((char) (((c + count - LOWER_CASE_MIN) % SIZE) + LOWER_CASE_MIN));
             } else {
                 result.append(c);
             }
@@ -34,7 +26,7 @@ public class CaesarAlgorithm {
     }
 
     public static String decode(final String text, final int count) {
-        return encode(text, -count);
+        return encode(text, 26 - count);
     }
 
 }
