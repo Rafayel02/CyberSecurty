@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.example.util.EnglishAlphabetUtil.*;
+
 public class LezviVichakagrutyunCalculator {
 
     private LezviVichakagrutyunCalculator() {
@@ -27,7 +29,7 @@ public class LezviVichakagrutyunCalculator {
         int allCount = 0;
         while (line != null) {
             for (char c : line.toCharArray()) {
-                if (EnglishAlphabetUtil.isLetter(c)) {
+                if (isLetter(c)) {
                     result.put(c, result.get(c) + 1);
                     allCount++;
                 }
@@ -47,13 +49,13 @@ public class LezviVichakagrutyunCalculator {
 
         final Map<Character, Double> result = new HashMap<>();
 
-        for (int i = 97; i <= 122; i++) {
+        for (int i = LOWER_CASE_MIN; i <= LOWER_CASE_MAX; i++) {
             result.put((char) i, 0D);
         }
 
         int allCount = 0;
-        for (char c : text.toCharArray()) {
-            if (EnglishAlphabetUtil.isLetter(c)) {
+        for (char c : text.toLowerCase().toCharArray()) {
+            if (isLetter(c)) {
                 result.put(c, result.get(c) + 1);
                 allCount++;
             }
@@ -66,7 +68,7 @@ public class LezviVichakagrutyunCalculator {
         return result;
     }
 
-    public static ComparedViewList compareResults(final Map<Character, Double> first, final Map<Character, Double> second) {
+    public static ComparedViewList compareResults(final Map<Character, Double> first, final Map<Character, Double> second, boolean sort) {
         final ComparedViewList comparedViewList = new ComparedViewList();
         for (Map.Entry<Character, Double> entrySet : first.entrySet()) {
             for (Map.Entry<Character, Double> secondEntrySet : second.entrySet()) {
@@ -76,12 +78,18 @@ public class LezviVichakagrutyunCalculator {
                 }
             }
         }
+
+        if (sort) {
+            comparedViewList.sort();
+        }
+
         return comparedViewList;
     }
 
     public static class ComparedViewList {
 
         private final List<ComparedView> comparedViewList = new ArrayList<>();
+
 
         public void add(final ComparedView comparedView) {
             comparedViewList.add(comparedView);
@@ -99,6 +107,10 @@ public class LezviVichakagrutyunCalculator {
             return result.toString();
         }
 
+        public void sort() {
+            this.comparedViewList.sort((o1, o2) -> Double.compare(o2.getPercent(), o1.getPercent()));
+        }
+
         public static class ComparedView {
             private final char a;
             private final char b;
@@ -108,6 +120,10 @@ public class LezviVichakagrutyunCalculator {
                 this.a = a;
                 this.b = b;
                 this.percent = percent;
+            }
+
+            public double getPercent() {
+                return percent;
             }
 
             @Override
