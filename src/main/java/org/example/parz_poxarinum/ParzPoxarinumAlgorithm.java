@@ -5,6 +5,8 @@ import org.example.util.EnglishAlphabetUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.util.EnglishAlphabetUtil.*;
+
 public class ParzPoxarinumAlgorithm {
 
     private String key;
@@ -21,7 +23,7 @@ public class ParzPoxarinumAlgorithm {
 
         for (char c : text.toLowerCase().toCharArray()) {
             if (!charList.contains(c)) {
-                if (EnglishAlphabetUtil.isLetter(c)) charList.add(c);
+                if (isLetter(c)) charList.add(c);
             }
         }
 
@@ -31,7 +33,7 @@ public class ParzPoxarinumAlgorithm {
         final String keyStartText = keyStart.toString();
         final StringBuilder keyEnd = new StringBuilder();
 
-        for (int i = 97; i <= 122; i++) {
+        for (int i = LOWER_CASE_MIN; i <= LOWER_CASE_MAX; i++) {
             boolean contains = false;
             for (char c : keyStartText.toCharArray()) {
                 if (i == c) {
@@ -39,9 +41,7 @@ public class ParzPoxarinumAlgorithm {
                     break;
                 }
             }
-            if (!contains) {
-                keyEnd.append((char) i);
-            }
+            if (!contains) keyEnd.append((char) i);
         }
 
         this.key = keyStartText + keyEnd;
@@ -58,12 +58,10 @@ public class ParzPoxarinumAlgorithm {
 
         final char[] keyList = key.toCharArray();
 
-        for (char c : text.toCharArray()) {
-            if (EnglishAlphabetUtil.isLetter(c)) {
-                result.append(keyList[c - 97]);
-            } else {
-                result.append(c);
-            }
+        for (char c : text.toLowerCase().toCharArray()) {
+            if (isLetter(c)) {
+                result.append(keyList[c - LOWER_CASE_MIN]);
+            } else result.append(c);
         }
 
         return result.toString();
@@ -74,18 +72,16 @@ public class ParzPoxarinumAlgorithm {
 
         final char[] keyList = key.toCharArray();
 
-        for (char c : text.toCharArray()) {
+        for (char c : text.toLowerCase().toCharArray()) {
             boolean contains = false;
             for (int i = 0; i < keyList.length; i++) {
                 if (keyList[i] == c) {
-                    result.append((char) (97 + i));
+                    result.append((char) (LOWER_CASE_MIN + i));
                     contains = true;
                     break;
                 }
             }
-            if (!contains) {
-                result.append(c);
-            }
+            if (!contains) result.append(c);
         }
 
         return result.toString();
