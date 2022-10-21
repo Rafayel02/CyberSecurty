@@ -1,5 +1,10 @@
 package org.example.caesar;
 
+import org.example.util.EnglishAlphabetUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.example.util.EnglishAlphabetUtil.*;
 
 public class CaesarAlgorithm {
@@ -25,6 +30,14 @@ public class CaesarAlgorithm {
 
     public static String decode(final String text, final int count) {
         return encode(text, 26 - count);
+    }
+
+    public static List<String> getAllCases(final String decoded) {
+        List<String> allValues = new ArrayList<>();
+        for (int i = 0; i < SIZE; i++) {
+            allValues.add(encode(decoded, (i + 1)));
+        }
+        return allValues;
     }
 
 }

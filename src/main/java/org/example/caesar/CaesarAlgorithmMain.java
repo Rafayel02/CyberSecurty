@@ -18,6 +18,8 @@ public class CaesarAlgorithmMain {
         System.out.println("Encoded: " + encodedText);
         System.out.println("Decoded: " + CaesarAlgorithm.decode(encodedText, count));
 
+        System.out.println(CaesarAlgorithm.getAllCases(encodedText));
+
         scanner.close();
     }
 
