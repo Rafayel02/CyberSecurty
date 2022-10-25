@@ -12,18 +12,18 @@ import static org.example.util.EnglishAlphabetUtil.*;
  * ընթացքում։ Ծրագրային ապահովումը վերաբերվում է 'Պարզ փոխարինում' ալգորիթմին։
  * Մշակված հատվածը կիրառելու դեպքում հեղիանկի անունը նշելը պարտադիր է։
  **/
-public class ParzPoxarinumAlgorithm {
+public class SimpleSubstitutionAlgorithm {
 
     private String key;
 
-    private ParzPoxarinumAlgorithm() {
+    private SimpleSubstitutionAlgorithm() {
     }
 
-    public static ParzPoxarinumAlgorithm getInstance() {
-        return new ParzPoxarinumAlgorithm();
+    public static SimpleSubstitutionAlgorithm getInstance() {
+        return new SimpleSubstitutionAlgorithm();
     }
 
-    public ParzPoxarinumAlgorithm withKey(final String text) {
+    public SimpleSubstitutionAlgorithm withKey(final String text) {
         this.key = KeyGenerator.generate(text);
         return this;
     }

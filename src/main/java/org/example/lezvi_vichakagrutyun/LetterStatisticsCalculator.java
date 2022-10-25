@@ -16,9 +16,9 @@ import static org.example.util.EnglishAlphabetUtil.*;
  * ընթացքում։ Ծրագրային ապահովումը վերաբերվում է 'Լեզվի վիճակագրություն' ալգորիթմին։
  * Մշակված հատվածը կիրառելու դեպքում հեղիանկի անունը նշելը պարտադիր է։
  **/
-public class LezviVichakagrutyunCalculator {
+public class LetterStatisticsCalculator {
 
-    private LezviVichakagrutyunCalculator() {
+    private LetterStatisticsCalculator() {
     }
 
     public static Map<Character, Double> calculate(final File file) throws IOException {
