@@ -15,12 +15,23 @@ public class ParzPoxarinumMain {
 
         System.out.println("The key is: " + parzPoxarinumAlgorithm.getKey());
 
-        System.out.print("Input text.txt: ");
-        final String text = scanner.nextLine();
+        System.out.print("Encode/Decode (1/2): ");
+        int method = Integer.parseInt(scanner.nextLine());
 
-        final String encodedText = parzPoxarinumAlgorithm.encode(text);
-        System.out.println("Encoded: " + encodedText);
-        System.out.println("Decoded: " + parzPoxarinumAlgorithm.decode(encodedText));
+        if (method == 1) {
+            System.out.print("Input text: ");
+            final String text = scanner.nextLine();
+
+            System.out.println("Encoded: " + parzPoxarinumAlgorithm.encode(text));
+        } else if (method == 2) {
+            System.out.print("Input text: ");
+            final String text = scanner.nextLine();
+
+            System.out.println("Decoded: " + parzPoxarinumAlgorithm.decode(text));
+        } else {
+            System.out.println("Please select valid option");
+        }
+
     }
 
 }

@@ -24,7 +24,7 @@ public class LezviVichakagrutyunMain {
         // after
         final Map<Character, Double> encodedTextResult = LezviVichakagrutyunCalculator.calculate(encode);
 
-        System.out.println("Not sorted: \n" + LezviVichakagrutyunCalculator.compareResults(simpleTextResult, encodedTextResult, false));
+//        System.out.println("Not sorted: \n" + LezviVichakagrutyunCalculator.compareResults(simpleTextResult, encodedTextResult, false));
 
         System.out.println("Sorted by percentage: \n" + LezviVichakagrutyunCalculator.compareResults(simpleTextResult, encodedTextResult, true));
     }
