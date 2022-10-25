@@ -35,7 +35,7 @@ public class CaesarAlgorithm {
     }
 
     public static String decode(final String text, final int count) {
-        return encode(text, 26 - count);
+        return encode(text, SIZE - count);
     }
 
     public static List<String> getAllCases(final String decoded) {
