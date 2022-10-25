@@ -3,8 +3,14 @@ package org.example.play_fair;
 import org.example.util.KeyGenerator;
 import org.example.util.MatrixUtil;
 
-import java.util.Arrays;
-
+/**
+ * © Ռաֆայել Շահնազարյան Դավիթի Երևան 2022
+ * <p>
+ * Այս լուծումը մշակվել է Հայաստանի Ազգային Պոլիտեխնիկական Համալսարանում
+ * «Տեղեկատվության գաղտնագրային և թաքնագրային պաշտպանություն» առարկայի
+ * ընթացքում։ Ծրագրային ապահովումը վերաբերվում է 'Փլեյ ֆեյր' ալգորիթմին։
+ * Մշակված հատվածը կիրառելու դեպքում հեղիանկի անունը նշելը պարտադիր է։
+ **/
 public class PlayFairAlgorithm {
     private String key;
     private final char[][] keyMatrix = new char[5][5];

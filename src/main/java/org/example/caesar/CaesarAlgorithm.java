@@ -1,12 +1,18 @@
 package org.example.caesar;
 
-import org.example.util.EnglishAlphabetUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.example.util.EnglishAlphabetUtil.*;
 
+/**
+ * © Ռաֆայել Շահնազարյան Դավիթի Երևան 2022
+ * <p>
+ * Այս լուծումը մշակվել է Հայաստանի Ազգային Պոլիտեխնիկական Համալսարանում
+ * «Տեղեկատվության գաղտնագրային և թաքնագրային պաշտպանություն» առարկայի
+ * ընթացքում։ Ծրագրային ապահովումը վերաբերվում է 'Կեսարի' ալգորիթմին։
+ * Մշակված հատվածը կիրառելու դեպքում հեղիանկի անունը նշելը պարտադիր է։
+ **/
 public class CaesarAlgorithm {
 
     private CaesarAlgorithm() {
