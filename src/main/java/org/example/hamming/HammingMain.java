@@ -21,6 +21,10 @@ public class HammingMain {
         System.out.println("Changed: " + Hamming.bitsAsString(encodedBits));
 
         System.out.println("Error index: " + Hamming.findErrorIndex(encodedBits));
+
+        Hamming.correct(encodedBits);
+        System.out.println("Corrected: " + Hamming.bitsAsString(encodedBits));
+
     }
 
 }

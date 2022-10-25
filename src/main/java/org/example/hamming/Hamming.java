@@ -57,7 +57,7 @@ public class Hamming {
         return result.toString();
     }
 
-    public static String findErrorIndex(LinkedList<BitNode> encoded) {
+    public static int findErrorIndex(LinkedList<BitNode> encoded) {
 
         List<Integer> values = new ArrayList<>();
         for (BitNode bitNode : encoded) {
@@ -72,10 +72,10 @@ public class Hamming {
                 Integer next = values.get(i);
                 value = value ^ next;
             }
-            return value + "";
+            return value;
         }
 
-        return "0";
+        return 0;
     }
 
     public static void changeBit(LinkedList<BitNode> encodedBits, int i) {
@@ -84,6 +84,12 @@ public class Hamming {
             return;
         }
         BitNode bitNode = encodedBits.get(encodedBits.size() - i);
+        bitNode.setBitValue(bitNode.getBitValue() == 1 ? 0 : 1);
+    }
+
+    public static void correct(LinkedList<BitNode> encodedBits) {
+        int errorIndex = findErrorIndex(encodedBits);
+        BitNode bitNode = encodedBits.get(errorIndex - 1);
         bitNode.setBitValue(bitNode.getBitValue() == 1 ? 0 : 1);
     }
 
