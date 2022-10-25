@@ -1,4 +1,4 @@
-package org.example.lezvi_vichakagrutyun;
+package org.example.letters_statistics;
 
 import java.io.*;
 import java.util.ArrayList;

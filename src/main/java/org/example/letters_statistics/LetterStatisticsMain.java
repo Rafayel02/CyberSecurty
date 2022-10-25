@@ -1,6 +1,6 @@
-package org.example.lezvi_vichakagrutyun;
+package org.example.letters_statistics;
 
-import org.example.parz_poxarinum.SimpleSubstitutionAlgorithm;
+import org.example.simple_substitution.SimpleSubstitutionAlgorithm;
 import org.example.util.FileUtil;
 
 import java.io.File;

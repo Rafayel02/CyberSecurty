@@ -1,4 +1,4 @@
-package org.example.parz_poxarinum;
+package org.example.simple_substitution;
 
 import java.util.Scanner;
 
