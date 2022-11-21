@@ -10,7 +10,7 @@ import java.util.Map;
 public class LetterStatisticsMain {
 
     public static void main(String[] args) throws IOException {
-        final File file = new File("/Users/rshakhnazari/Desktop/CyberSecurity/src/main/java/org/example/lezvi_vichakagrutyun/text.txt");
+        final File file = new File("/Users/rshakhnazari/Desktop/CyberSecurity/src/main/java/org/example/letters_statistics/text.txt");
         final String text = FileUtil.getFileContent(file);
 
         // before
