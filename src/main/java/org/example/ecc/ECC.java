@@ -18,16 +18,17 @@ public class ECC {
         text = makeDividable(text, 3);
         String[] dividedItems = divideItems(text);
 
-        System.out.println(Arrays.toString(dividedItems));
-
         for (int i = 0; i < dividedItems.length; i++) {
             char[] chars = dividedItems[i].toCharArray();
             dividedItems[i] = dividedItems[i] + (Integer.parseInt(String.valueOf(chars[0])) ^ Integer.parseInt(String.valueOf(chars[1])) ^ Integer.parseInt(String.valueOf(chars[2])));
         }
 
-        System.out.println(Arrays.toString(dividedItems));
+        StringBuilder result = new StringBuilder();
+        for (String dividedItem : dividedItems) {
+            result.append(dividedItem);
+        }
 
-        return "";
+        return result.toString();
     }
 
     private static String[] divideItems(String text) {
@@ -43,4 +44,30 @@ public class ECC {
         return dividedItems;
     }
 
+    public static String changeBit(String encode, int i) {
+        StringBuilder result = new StringBuilder();
+        char[] chars = encode.toCharArray();
+        for (int j = 0; j < chars.length; j++) {
+            if (i == j) {
+                chars[j] = chars[j] == '1' ? '0' : '1';
+                result.append(chars[j]);
+                continue;
+            }
+            char c = chars[j];
+            result.append(c);
+        }
+        return result.toString();
+    }
+
+    public static boolean hasMistake(String encode) {
+        char[] chars = encode.toCharArray();
+
+        int result = Integer.parseInt(String.valueOf(chars[0]));
+        for (int i = 1; i < chars.length; i++) {
+            char aChar = chars[i];
+            result = result ^ Integer.parseInt(String.valueOf(aChar));
+        }
+
+        return result == 1;
+    }
 }
