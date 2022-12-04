@@ -7,3 +7,5 @@
 5. Huffman algorithm: CyberSecurty/src/main/java/org/example/huffman/
 6. Veradasavorum algorithm: CyberSecurty/src/main/java/org/example/veradasavorum/
 7. S-DES algorithm: CyberSecurty/src/main/java/org/example/des/
+8. Muller algorithm: CyberSecurty/src/main/java/org/example/muller/
+9. RC4 algorithm: CyberSecurty/src/main/java/org/example/rc4/
