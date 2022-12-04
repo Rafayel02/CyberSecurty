@@ -109,20 +109,5 @@ public class DesUtil {
         return input;
     }
 
-
-    public static String XOR(String a, String b) {
-        StringBuilder res = new StringBuilder();
-
-        for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) == b.charAt(i)) {
-                res.append("0");
-            } else {
-                res.append("1");
-            }
-        }
-
-        return res.toString();
-    }
-
 }
 

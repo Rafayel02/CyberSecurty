@@ -14,4 +14,13 @@ public class StringUtil {
         return text;
     }
 
+    public static String charsToString(char[] input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (char c : input) {
+            stringBuilder.append(c);
+        }
+        return stringBuilder.toString();
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package org.example.des;
 
 import static org.example.des.DesUtil.*;
+import static org.example.util.BinaryUtils.XOR;
 
 /**
  * © Ռաֆայել Շահնազարյան Դավիթի Երևան 2022
